@@ -5,20 +5,10 @@ public class Main {
         checkYearIsLeapAndPrint(year);
 
         System.out.println("\nTask 2");
-        int clientOS = 0;
+        int clientOS = 1;
         int clientDeviceYear = 2016;
-        int conclusion = checkingConditionAndReturningString(clientOS, clientDeviceYear);
-        if (conclusion == 1) {
-            System.out.println("«Установите облегченную версию приложения для iOS по ссылке».");
-        } else if (conclusion == 2) {
-            System.out.println("«Установите версию приложения для iOS по ссылке».");
-        } else if (conclusion == 3) {
-            System.out.println("«Установите облегченную версию приложения для Android по ссылке».");
-        } else if (conclusion == 4) {
-            System.out.println("«Установите версию приложения для Android по ссылке».");
-        } else if (conclusion == 5) {
-            System.out.println("«Такая система не поддерживается».");
-        }
+        checkingConditionAndReturningString(clientOS, clientDeviceYear);
+
 
         System.out.println("\nTask 3");
         int calculated = calculateDeliveryDistance(25);
@@ -39,18 +29,18 @@ public class Main {
         }
     }
 
-    private static int checkingConditionAndReturningString(int deviceType, int year) {
+    private static void checkingConditionAndReturningString(int deviceType, int year) {
         int currentYear = 2015;
         if (deviceType == 0 && year < currentYear) {
-            return 1;
+            System.out.println("«Установите облегченную версию приложения для iOS по ссылке».");
         } else if (deviceType == 0) {
-            return 2;
+            System.out.println("«Установите версию приложения для iOS по ссылке».");
         } else if (deviceType == 1 && year < currentYear) {
-            return 3;
+            System.out.println("«Установите облегченную версию приложения для Android по ссылке».");
         } else if (deviceType == 1) {
-            return 4;
+            System.out.println("«Установите версию приложения для Android по ссылке».");
         } else {
-            return 5;
+            System.out.println("«Такая система не поддерживается».");
         }
     }
 
